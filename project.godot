@@ -20,6 +20,10 @@ run/main_scene="res://Demo/demo_scene.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://addons/PlayAtCamPos/Global.gd"
+
 [dotnet]
 
 project/assembly_name="TVPTesting"

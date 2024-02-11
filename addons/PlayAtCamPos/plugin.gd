@@ -8,6 +8,7 @@ var cam
 var target
 var play_here_btn
 var warning_dialogue
+var user_interface
 
 # Normal
 var target_group: String = ""
@@ -16,20 +17,24 @@ var target_group: String = ""
 var follow_rotation: bool = false
 
 # Const
-const BUTTON = preload("res://addons/PlayAtCamPos/Button.tscn")
+const PLAY_AT_CAMERA_POS_UI = preload("res://addons/PlayAtCamPos/Button.tscn")
+const GLOBAL_SCRIPT_PATH = "res://addons/PlayAtCamPos/Global.gd"
 
 # ---------- FUNCTIONS ---------- #
 
 #region Built-in Functions
 func _enter_tree():
 	add_project_setting()
-
+	add_autoload_singleton("Global", GLOBAL_SCRIPT_PATH)
+	
+	# Get Editor Viewport Camera
 	cam = get_editor_interface().get_editor_viewport_3d().get_camera_3d()
 	
-	# Instance the play button
-	play_here_btn = BUTTON.instantiate()
-	#play_here_btn.pressed.connect(_on_button_pressed)
-	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, play_here_btn)
+	# Instance The Play Button
+	user_interface = PLAY_AT_CAMERA_POS_UI.instantiate()
+	play_here_btn = user_interface.get_node("PanelContainer/HBoxContainer/PlayHereButton")
+	play_here_btn.pressed.connect(_on_button_pressed)
+	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 
 
 func _process(delta):
@@ -39,7 +44,9 @@ func _process(delta):
 
 
 func _exit_tree():
-	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, play_here_btn)
+	#remove_autoload_singleton("Global")
+	Global.follow_rotation = false
+	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 #endregion
 
 
@@ -87,15 +94,13 @@ func show_warnings():
 
 
 #region Signal Functions
-#func _on_button_pressed():
-	#get_target()
-	#if target != null:
-		#match follow_rotation:
-			#true:
-				#target.transform = get_camera_transform()
-			#false:
-				#target.position = get_camera_position()
-				#target.rotation = Vector3.ZERO
-		#get_editor_interface().play_current_scene()
-
+func _on_button_pressed():
+	get_target()
+	if target != null:
+		if Global.follow_rotation:
+			target.transform = get_camera_transform()
+		else:
+			target.position = get_camera_position()
+			target.rotation = Vector3.ZERO
+	get_editor_interface().play_current_scene()
 #endregion

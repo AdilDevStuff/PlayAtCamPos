@@ -121,4 +121,5 @@ text = "Close"
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="close_requested" from="SettingsWindow" to="." method="_on_settings_window_close_requested"]
+[connection signal="toggled" from="SettingsWindow/PanelContainer/CenterContainer/Settings/FollowCamRotBtn" to="." method="_on_follow_cam_rot_btn_toggled"]
 [connection signal="pressed" from="SettingsWindow/PanelContainer/CenterContainer/Settings/SaveBtn" to="." method="_on_save_btn_pressed"]
