@@ -6,6 +6,7 @@ var play_here_btn
 var player
 
 var follow_rotation: bool = false
+var target_group: String = ""
 const PLAY_HERE_BUTTON = preload("res://addons/PlayAtCamPos/play_here_button.tscn")
 
 func _enter_tree():
@@ -37,15 +38,19 @@ func get_camera_transform():
 	return cam.transform
 
 func set_project_setting():
-	ProjectSettings.set("PlayAtCameraPos/follow_rotation", false)
+	ProjectSettings.set("PlayAtCamPos/follow_rotation", false)
+	ProjectSettings.set("PlayAtCamPos/target_group", "")
 	ProjectSettings.add_property_info(
 		{
-			"name": "PlayAtCameraPos/follow_rotation",
-			"type" : TYPE_BOOL
+			"follow_rotation": "PlayAtCamPos/follow_rotation",
+			"type_bool" : TYPE_BOOL,
+			"target_group": "PlayAtCamPos/target_group",
+			"type_string" : TYPE_STRING
 		})
 
 func get_project_setting():
-	follow_rotation = ProjectSettings.get_setting("PlayAtCameraPos/follow_rotation")
+	follow_rotation = ProjectSettings.get_setting("PlayAtCamPos/follow_rotation")
+	target_group = ProjectSettings.get_setting("PlayAtCamPos/target_group")
 
 func _on_button_pressed():
 	get_target()

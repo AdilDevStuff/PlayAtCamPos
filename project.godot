@@ -8,6 +8,11 @@
 
 config_version=5
 
+[PlayAtCamPos]
+
+follow_rotation=false
+target_group=""
+
 [PlayAtCameraPos]
 
 follow_rotation=false

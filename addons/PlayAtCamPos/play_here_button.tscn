@@ -16,6 +16,7 @@ extends Button
 [node name="PlayHereButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+tooltip_text = "Play this scene at current position"
 shortcut = SubResource("Shortcut_arxja")
 text = "Play Here"
 script = SubResource("GDScript_uuesw")
