@@ -19,8 +19,8 @@ Its a pretty simple addon. If you have used roblox studio before, there's a butt
 - There should be only one `CharacterBody3D` in the scene to make it work currently. I will find a way to make it work with given target in future (Prob. with groups).
 
 # How To Install
-1. Download the `addons` folder from this repo
-2. Copy the files inside the folder to `res://addons/playatcurrentpos` in your godot project.
+1. Download the `PlayAtCamPos` folder from this repo
+2. Copy the folder to `res://addons/PlayAtCamPos` in your godot project.
 3. Go to project settigs > Plugins and enable the plugin there
 4. Done!
 
