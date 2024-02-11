@@ -13,10 +13,6 @@ config_version=5
 follow_rotation=false
 target_group=""
 
-[PlayAtCameraPos]
-
-follow_rotation=false
-
 [application]
 
 config/name="PlayAtCamPosDemo"

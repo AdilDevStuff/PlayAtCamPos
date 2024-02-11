@@ -37,7 +37,7 @@ func get_target():
 			target = child
 		else:
 			target = null
-	if target == null:
+	if not target:
 		printerr("Target not found! Make sure you have a CharacterBody3D in the current scene")
 
 func get_camera_position():
