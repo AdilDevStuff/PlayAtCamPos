@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://clxuxmjaor3b"]
+
+[ext_resource type="Script" path="res://addons/playatcurrentposition/play_here_button.gd" id="1_7bc5b"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_8tauw"]
+device = -1
+ctrl_pressed = true
+keycode = 4194337
+
+[sub_resource type="Shortcut" id="Shortcut_arxja"]
+events = [SubResource("InputEventKey_8tauw")]
+
+[node name="PlayHereButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+shortcut = SubResource("Shortcut_arxja")
+text = "Play Here"
+script = ExtResource("1_7bc5b")
