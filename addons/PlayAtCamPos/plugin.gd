@@ -6,8 +6,8 @@ var target
 var play_here_btn
 var warning_dialogue
 
-var follow_rotation: bool = false
 var target_group: String = ""
+var follow_rotation: bool = false
 
 const PLAY_HERE_BUTTON = preload("res://addons/PlayAtCamPos/play_here_button.tscn")
 const WARNING_DIALOGUE = preload("res://addons/PlayAtCamPos/warning_dialogue.tscn")
@@ -32,13 +32,13 @@ func _exit_tree():
 	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, play_here_btn)
 
 func get_target():
+	if target == null:
+		printerr("Target not found! Make sure you have a CharacterBody3D in the current scene")
+
+	target = null
 	for child in get_tree().edited_scene_root.get_children():
 		if child is CharacterBody3D:
 			target = child
-		else:
-			target = null
-	if not target:
-		printerr("Target not found! Make sure you have a CharacterBody3D in the current scene")
 
 func get_camera_position():
 	return cam.position
