@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d0jrbimhs2dvo"]
+
+[node name="WarningDialogue" type="Window"]
+title = "Error Finding Target"
+initial_position = 1
+size = Vector2i(400, 100)
+unresizable = true
+popup_window = true
+mouse_passthrough = true
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WarningText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(400, 100)
+offset_right = 400.0
+offset_bottom = 100.0
+bbcode_enabled = true
+text = "[center]Cannot find an appropriate target to set position! Make sure there is a CharacterBody3D added in the current scene tree![/center]"
+fit_content = true
