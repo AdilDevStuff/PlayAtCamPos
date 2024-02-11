@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1080"
+   height="1080"
+   viewBox="0 0 285.74999 285.75"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.50646226"
+     inkscape:cx="278.40179"
+     inkscape:cy="594.31872"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#1a1a1a;stroke-width:0.556143"
+       id="rect1"
+       width="285.75"
+       height="285.75"
+       x="-4.9999999e-06"
+       y="-4.9999999e-06" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.0816px;font-family:Hack;-inkscape-font-specification:'Hack, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:2.2568"
+       x="34.636898"
+       y="261.62939"
+       id="text1"
+       transform="rotate(-2.608789)"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.0816px;font-family:Hack;-inkscape-font-specification:'Hack, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:2.2568"
+         x="34.636898"
+         y="261.62939">PlayAtCamPos</tspan></text>
+    <g
+       id="g2"
+       inkscape:label="Icon">
+      <path
+         d="m 208.96317,17.717669 -28.07943,10.372495 15.75836,22.297742 21.46241,-7.915695 z m -52.8494,19.48937 -24.74899,9.152198 15.76386,22.323583 24.76187,-9.15492 z m -49.54154,18.289668 -24.749014,9.152199 15.763826,22.3236 24.761928,-9.15495 z M 57.056485,73.78089 35.607994,81.698736 44.751199,106.46307 72.830623,96.090576 Z m -9.571125,45.59244 16.407128,77.47731 c 3.020389,14.26328 17.03162,23.3774 31.294874,20.3569 L 250.142,184.39328 228.2658,81.090016 Z m 67.29896,-0.7599 16.40712,77.47732 z"
+         fill="#e0e0e0"
+         id="path1-2"
+         style="stroke-width:13.1993"
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccc" />
+      <path
+         d="m 165.94378,113.15177 a 20.368515,20.368515 0 0 0 -23.59019,14.62432 20.368515,20.368515 0 1 0 -26.5292,29.75366 l -2.81731,14.50283 a 6.789505,6.789505 0 0 0 5.37013,7.95965 l 39.98946,7.76832 a 6.789505,6.789505 0 0 0 7.95982,-5.37019 l 1.29473,-6.6649 17.40529,17.214 7.76833,-39.98951 -22.5842,9.44568 2.29166,-11.7969 a 20.368515,20.368515 0 0 0 -6.55852,-37.44696 z"
+         fill="#fc7f7f"
+         id="path1"
+         style="fill:#1a1a1a;fill-opacity:1;stroke-width:6.78948" />
+      <path
+         sodipodi:type="star"
+         style="fill:#e0e0e0;fill-opacity:1;stroke-width:0.264583"
+         id="path2"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="-71.340591"
+         sodipodi:cy="94.722488"
+         sodipodi:r1="27.589924"
+         sodipodi:r2="13.794962"
+         sodipodi:arg1="0.78539816"
+         sodipodi:arg2="1.8325957"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m -51.831569,114.23151 -23.079421,-6.18411 -23.079421,-6.18411 16.895308,-16.895313 16.895309,-16.895309 6.184113,23.079421 z"
+         inkscape:transform-center-x="-0.78415062"
+         inkscape:transform-center-y="-0.78414522"
+         transform="matrix(0,0.5879399,-0.5879399,0,197.38636,197.069)" />
+    </g>
+  </g>
+</svg>
