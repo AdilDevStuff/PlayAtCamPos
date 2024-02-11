@@ -3,6 +3,8 @@ extends Control
 
 @export var play_here_button: Button
 
+@onready var Global = preload("res://addons/PlayAtCamPos/Global.gd").new()
+
 func _on_settings_btn_pressed():
 	$SettingsWindow.popup_centered()
 

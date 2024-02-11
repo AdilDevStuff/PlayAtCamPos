@@ -2,4 +2,4 @@
 extends Node
 
 var target_group: String = ""
-var follow_rotation: bool = false
+static var follow_rotation: bool = false

@@ -18,14 +18,14 @@ var follow_rotation: bool = false
 
 # Const
 const PLAY_AT_CAMERA_POS_UI = preload("res://addons/PlayAtCamPos/Button.tscn")
-const GLOBAL_SCRIPT_PATH = "res://addons/PlayAtCamPos/Global.gd"
+
+@onready var Global = preload("res://addons/PlayAtCamPos/Global.gd").new()
 
 # ---------- FUNCTIONS ---------- #
 
 #region Built-in Functions
 func _enter_tree():
 	add_project_setting()
-	add_autoload_singleton("Global", GLOBAL_SCRIPT_PATH)
 	
 	# Get Editor Viewport Camera
 	cam = get_editor_interface().get_editor_viewport_3d().get_camera_3d()
@@ -44,7 +44,6 @@ func _process(delta):
 
 
 func _exit_tree():
-	#remove_autoload_singleton("Global")
 	Global.follow_rotation = false
 	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 #endregion
@@ -102,5 +101,5 @@ func _on_button_pressed():
 		else:
 			target.position = get_camera_position()
 			target.rotation = Vector3.ZERO
-	get_editor_interface().play_current_scene()
+		get_editor_interface().play_current_scene()
 #endregion

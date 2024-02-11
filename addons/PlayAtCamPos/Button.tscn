@@ -97,6 +97,7 @@ text = "Follow Camera Rotation"
 alignment = 1
 
 [node name="TargetGroup" type="HBoxContainer" parent="SettingsWindow/PanelContainer/CenterContainer/Settings"]
+visible = false
 layout_mode = 2
 
 [node name="TargetLabel" type="Label" parent="SettingsWindow/PanelContainer/CenterContainer/Settings/TargetGroup"]
