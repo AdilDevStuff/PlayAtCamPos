@@ -6,7 +6,7 @@ var play_here_btn
 var player
 
 var follow_rotation: bool = false
-const PLAY_HERE_BUTTON = preload("res://addons/playatcurrentposition/play_here_button.tscn")
+const PLAY_HERE_BUTTON = preload("res://addons/PlayAtCamPos/play_here_button.tscn")
 
 func _enter_tree():
 	set_project_setting()
