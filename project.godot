@@ -15,9 +15,9 @@ follow_rotation=false
 [application]
 
 config/name="PlayAtCamPosDemo"
-run/main_scene="res://demo_scene.tscn"
+run/main_scene="res://Demo/demo_scene.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://icon.png"
+config/icon="res://Demo/icon.png"
 
 [dotnet]
 
