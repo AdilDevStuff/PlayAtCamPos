@@ -7,8 +7,8 @@ extends EditorPlugin
 var cam
 var target
 var play_here_btn
-var warning_dialogue
 var user_interface
+var warning_dialogue
 
 # Normal
 var target_group: String = ""
@@ -17,15 +17,20 @@ var target_group: String = ""
 var follow_rotation: bool = false
 
 # Const
-const PLAY_AT_CAMERA_POS_UI = preload("res://addons/PlayAtCamPos/Button.tscn")
+const PLAY_AT_CAMERA_POS_UI = preload("res://addons/PlayAtCamPos/scenes/Button.tscn")
+const WARNING_DIALOGUE = preload("res://addons/PlayAtCamPos/scenes/warning_dialogue.tscn")
 
-@onready var Global = preload("res://addons/PlayAtCamPos/Global.gd").new()
+@onready var Global = preload("res://addons/PlayAtCamPos/Global.gd")
 
 # ---------- FUNCTIONS ---------- #
 
 #region Built-in Functions
 func _enter_tree():
 	add_project_setting()
+	
+	# Instantiate Warning Dialogue
+	warning_dialogue = WARNING_DIALOGUE.instantiate()
+	add_child(warning_dialogue)
 	
 	# Get Editor Viewport Camera
 	cam = get_editor_interface().get_editor_viewport_3d().get_camera_3d()
@@ -36,10 +41,9 @@ func _enter_tree():
 	play_here_btn.pressed.connect(_on_button_pressed)
 	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 
-
 func _process(delta):
-	get_project_setting()
 	get_camera_transform()
+	get_project_setting()
 	get_camera_position()
 
 
@@ -55,6 +59,7 @@ func get_target(): # Get the target object (Any body with a specifed group)
 	for child in get_tree().edited_scene_root.get_children():
 		if child is CharacterBody3D:
 			target = child
+
 
 func get_camera_position():
 	return cam.position
@@ -83,12 +88,8 @@ func get_project_setting():
 
 func show_warnings():
 	if target == null:
-		play_here_btn.disabled = true
-		play_here_btn.text = "No Target"
+		warning_dialogue.popup_centered()
 		printerr("Target not found! Make sure you have a CharacterBody3D in the current scene")
-	else:
-		play_here_btn.disabled = false
-		play_here_btn.text = "Play Here"
 #endregion
 
 
@@ -102,4 +103,6 @@ func _on_button_pressed():
 			target.position = get_camera_position()
 			target.rotation = Vector3.ZERO
 		get_editor_interface().play_current_scene()
+	else:
+		show_warnings()
 #endregion

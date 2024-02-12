@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://clxuxmjaor3b"]
+[gd_scene load_steps=10 format=3 uid="uid://clxuxmjaor3b"]
 
-[ext_resource type="Script" path="res://addons/PlayAtCamPos/play_at_cam_pos.gd" id="1_o0gkp"]
+[ext_resource type="Script" path="res://addons/PlayAtCamPos/scripts/play_at_cam_pos.gd" id="1_5d5dy"]
+[ext_resource type="Texture2D" uid="uid://dafpuu7i8vt7s" path="res://addons/PlayAtCamPos/icons/PlayAtCurrentPos.png" id="2_uadkw"]
+[ext_resource type="Texture2D" uid="uid://coy3ehlqfc4o6" path="res://addons/PlayAtCamPos/icons/SettingsIcon.png" id="3_eb0u7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xn7l6"]
 bg_color = Color(0.105882, 0.105882, 0.105882, 1)
@@ -31,20 +33,20 @@ events = [SubResource("InputEventKey_8tauw")]
 bg_color = Color(0.119835, 0.119835, 0.119835, 1)
 
 [node name="PlayAtCamPos" type="Control"]
-custom_minimum_size = Vector2(172, 32)
+custom_minimum_size = Vector2(116, 32)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -980.0
+offset_right = -1036.0
 offset_bottom = -616.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o0gkp")
+script = ExtResource("1_5d5dy")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 172.0
+offset_right = 116.0
 offset_bottom = 31.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xn7l6")
 
@@ -53,7 +55,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="PlayHereButton" type="Button" parent="PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -61,11 +63,17 @@ tooltip_text = "Play this scene at current position"
 theme_override_styles/pressed = SubResource("StyleBoxFlat_se7ya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vodcc")
 shortcut = SubResource("Shortcut_arxja")
-text = "Play Here"
+icon = ExtResource("2_uadkw")
+flat = true
+icon_alignment = 1
 
 [node name="SettingsBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
+tooltip_text = "Settings"
+icon = ExtResource("3_eb0u7")
+flat = true
+icon_alignment = 1
 
 [node name="SettingsWindow" type="Window" parent="."]
 title = "Settings"

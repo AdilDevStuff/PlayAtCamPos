@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://claad1ge6aphd"]
+
+[ext_resource type="Script" path="res://addons/PlayAtCamPos/scripts/warning_dialogue.gd" id="1_xksme"]
+
+[node name="WarningDialogue" type="Window"]
+title = "No Target Found!"
+initial_position = 1
+size = Vector2i(500, 120)
+visible = false
+unresizable = true
+script = ExtResource("1_xksme")
+
+[node name="ErrorInfo" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(500, 0)
+offset_top = 5.505
+offset_right = 500.0
+offset_bottom = 125.505
+bbcode_enabled = true
+text = "[center]No valid target found in the current scene. Make sure you've added a CharacterBody3D in the scene![/center]"
+
+[node name="CloseBtn" type="Button" parent="."]
+custom_minimum_size = Vector2(140, 50)
+offset_left = 180.0
+offset_top = 61.315
+offset_right = 320.0
+offset_bottom = 111.315
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="CloseBtn" to="." method="_on_close_btn_pressed"]
