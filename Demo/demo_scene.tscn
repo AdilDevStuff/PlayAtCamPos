@@ -54,7 +54,7 @@ use_collision = true
 size = Vector3(11, 8, 1)
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35342, 1.5, 1.00111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62967, 21.2055, 22.7759)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]

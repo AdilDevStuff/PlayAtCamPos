@@ -26,8 +26,6 @@ const WARNING_DIALOGUE = preload("res://addons/PlayAtCamPos/scenes/warning_dialo
 
 #region Built-in Functions
 func _enter_tree():
-	add_project_setting()
-	
 	# Instantiate Warning Dialogue
 	warning_dialogue = WARNING_DIALOGUE.instantiate()
 	add_child(warning_dialogue)
@@ -43,7 +41,6 @@ func _enter_tree():
 
 func _process(delta):
 	get_camera_transform()
-	get_project_setting()
 	get_camera_position()
 
 
@@ -69,27 +66,9 @@ func get_camera_transform():
 	return cam.transform
 
 
-func add_project_setting():
-	ProjectSettings.set("PlayAtCamPos/follow_rotation", false)
-	ProjectSettings.set("PlayAtCamPos/target_group", "")
-	ProjectSettings.add_property_info(
-		{
-			"follow_rotation": "PlayAtCamPos/follow_rotation",
-			"type_bool" : TYPE_BOOL,
-			"target_group": "PlayAtCamPos/target_group",
-			"type_string" : TYPE_STRING
-		})
-
-
-func get_project_setting():
-	follow_rotation = ProjectSettings.get_setting("PlayAtCamPos/follow_rotation")
-	target_group = ProjectSettings.get_setting("PlayAtCamPos/target_group")
-
-
 func show_warnings():
 	if target == null:
 		warning_dialogue.popup_centered()
-		printerr("Target not found! Make sure you have a CharacterBody3D in the current scene")
 #endregion
 
 
