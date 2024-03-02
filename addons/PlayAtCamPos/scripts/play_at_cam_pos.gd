@@ -19,6 +19,3 @@ func _on_follow_cam_rot_btn_toggled(toggled_on):
 		Global.follow_rotation = true
 	else:
 		Global.follow_rotation = false
-
-func _on_reset_pos_btn_pressed():
-	Global.reset_target_position()

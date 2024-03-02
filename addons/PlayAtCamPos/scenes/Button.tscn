@@ -126,7 +126,7 @@ clear_button_enabled = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Reset Position"
+text = "Reset Camera Position"
 
 [node name="SaveBtn" type="Button" parent="SettingsWindow/PanelContainer/CenterContainer/Settings"]
 custom_minimum_size = Vector2(100, 0)
