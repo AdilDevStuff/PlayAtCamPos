@@ -9,6 +9,7 @@ Its a pretty simple addon. If you have used roblox studio before, there's a butt
 # How To Use:
 - Make sure plugin is enabled in the Project Settings > Plugins
 - Add any group to your target, for example `player`
+- Set the `target_group` in the settings window, which is right next to `play_here` button.
 - Go anywhere in the scene and press `Play Here` button on top right corner of the screen.
 - By default, it just follows the position of the editor's viewport camera
 - You can enable the `follow_rotation` option from Settings window right next to the player button to make it follow rotation as well.
