@@ -105,7 +105,6 @@ text = "Follow Camera Rotation"
 alignment = 1
 
 [node name="TargetGroup" type="HBoxContainer" parent="SettingsWindow/PanelContainer/CenterContainer/Settings"]
-visible = false
 layout_mode = 2
 
 [node name="TargetLabel" type="Label" parent="SettingsWindow/PanelContainer/CenterContainer/Settings/TargetGroup"]
@@ -114,6 +113,7 @@ size_flags_horizontal = 3
 text = "Target Group"
 
 [node name="GroupName" type="LineEdit" parent="SettingsWindow/PanelContainer/CenterContainer/Settings/TargetGroup"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Player"
@@ -137,5 +137,6 @@ text = "Close"
 [connection signal="pressed" from="PanelContainer/HBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="close_requested" from="SettingsWindow" to="." method="_on_settings_window_close_requested"]
 [connection signal="toggled" from="SettingsWindow/PanelContainer/CenterContainer/Settings/FollowCamRotBtn" to="." method="_on_follow_cam_rot_btn_toggled"]
+[connection signal="text_submitted" from="SettingsWindow/PanelContainer/CenterContainer/Settings/TargetGroup/GroupName" to="." method="_on_group_name_text_submitted"]
 [connection signal="pressed" from="SettingsWindow/PanelContainer/CenterContainer/Settings/ResetPosBtn" to="." method="_on_reset_pos_btn_pressed"]
 [connection signal="pressed" from="SettingsWindow/PanelContainer/CenterContainer/Settings/SaveBtn" to="." method="_on_save_btn_pressed"]
