@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="TVPTesting"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/PlayAtCamPos/plugin.cfg")
+
 [input]
 
 PlayAtCurrentPosition={

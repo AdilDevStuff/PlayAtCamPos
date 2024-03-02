@@ -122,6 +122,12 @@ max_length = 20
 expand_to_text_length = true
 clear_button_enabled = true
 
+[node name="ResetPosBtn" type="Button" parent="SettingsWindow/PanelContainer/CenterContainer/Settings"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset Camera Position"
+
 [node name="SaveBtn" type="Button" parent="SettingsWindow/PanelContainer/CenterContainer/Settings"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -131,4 +137,5 @@ text = "Close"
 [connection signal="pressed" from="PanelContainer/HBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="close_requested" from="SettingsWindow" to="." method="_on_settings_window_close_requested"]
 [connection signal="toggled" from="SettingsWindow/PanelContainer/CenterContainer/Settings/FollowCamRotBtn" to="." method="_on_follow_cam_rot_btn_toggled"]
+[connection signal="pressed" from="SettingsWindow/PanelContainer/CenterContainer/Settings/ResetPosBtn" to="." method="_on_reset_pos_btn_pressed"]
 [connection signal="pressed" from="SettingsWindow/PanelContainer/CenterContainer/Settings/SaveBtn" to="." method="_on_save_btn_pressed"]

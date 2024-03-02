@@ -7,6 +7,7 @@ extends EditorPlugin
 var cam
 var target
 var play_here_btn
+var reset_pos_button
 var user_interface
 var warning_dialogue
 
@@ -37,18 +38,21 @@ func _enter_tree():
 	user_interface = PLAY_AT_CAMERA_POS_UI.instantiate()
 	play_here_btn = user_interface.get_node("PanelContainer/HBoxContainer/PlayHereButton")
 	play_here_btn.pressed.connect(_on_button_pressed)
+	
+	reset_pos_button = user_interface.get_node("SettingsWindow/PanelContainer/CenterContainer/Settings/ResetPosBtn")
+	reset_pos_button.pressed.connect(_on_reset_pos_button_pressed)
+
 	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 
 func _process(delta):
+	get_target()
 	get_camera_transform()
 	get_camera_position()
-
 
 func _exit_tree():
 	Global.follow_rotation = false
 	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, user_interface)
 #endregion
-
 
 #region Custom Functions
 func get_target(): # Get the target object (Any body with a specifed group)
@@ -57,24 +61,19 @@ func get_target(): # Get the target object (Any body with a specifed group)
 		if child is CharacterBody3D:
 			target = child
 
-
 func get_camera_position():
 	return cam.position
 
-
 func get_camera_transform():
 	return cam.transform
-
 
 func show_warnings():
 	if target == null:
 		warning_dialogue.popup_centered()
 #endregion
 
-
 #region Signal Functions
 func _on_button_pressed():
-	get_target()
 	if target != null:
 		if Global.follow_rotation:
 			target.transform = get_camera_transform()
@@ -84,4 +83,11 @@ func _on_button_pressed():
 		get_editor_interface().play_current_scene()
 	else:
 		show_warnings()
+
+func _on_reset_pos_button_pressed():
+	if target:
+		target.position = Vector3(0,2,0)
+		target.rotation = Vector3.ZERO
+	else: push_error("Target not found! Make sure to set the group in the settings")
 #endregion
+
