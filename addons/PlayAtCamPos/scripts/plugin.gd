@@ -58,7 +58,7 @@ func _exit_tree():
 func get_target(): # Get the target object (Any body with a specifed group)
 	target = null
 	for child in get_tree().edited_scene_root.get_children():
-		if child is CharacterBody3D:
+		if child.is_in_group(Global.target_group):
 			target = child
 
 func get_camera_position():
